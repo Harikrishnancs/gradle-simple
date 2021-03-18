@@ -13,7 +13,7 @@ repositories {
     name 'harikrishnancscs'
     credentials {
         username "harikrishnancscs"
-        password System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") != null ? System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") : $pat
+        password System.getenv("SYSTEM_ACCESSTOKEN")
     
     }
 }
