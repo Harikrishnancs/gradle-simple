@@ -11,8 +11,10 @@ repositories {
   maven {
     url 'https://pkgs.dev.azure.com/harikrishnancscs/_packaging/harikrishnancscs/maven/v1'
     name 'harikrishnancscs'
-    authentication {
-        basic(BasicAuthentication)
+    credentials {
+        username "harikrishnancscs"
+        password System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") != null ? System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") : $pat
+    
     }
 }
 }
