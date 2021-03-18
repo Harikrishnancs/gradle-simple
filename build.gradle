@@ -21,9 +21,10 @@ repositories {
 
 dependencies {
   implementation 'com.google.guava:guava:29.0-jre'
+  classpath "net.linguica.gradle:maven-settings-plugin:0.5"
   
 }
-
+apply plugin: 'net.linguica.maven-settings'
 task sourcesJar(type: Jar, dependsOn: classes) {
     classifier = 'sources'
     from sourceSets.main.allSource
