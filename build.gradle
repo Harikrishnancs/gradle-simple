@@ -1,7 +1,14 @@
 apply plugin: 'java'
 apply plugin: 'maven'
 
+plugins {
+    id "net.linguica.maven-settings" version "0.5"
+}
+subprojects {
+    apply plugin: 'net.linguica.maven-settings'
 
+   
+}
 group = 'com.github.jitpack'
 
 sourceCompatibility = 1.8 // java 8
@@ -21,10 +28,10 @@ repositories {
 
 dependencies {
   implementation 'com.google.guava:guava:29.0-jre'
-  classpath "net.linguica.gradle:maven-settings-plugin:0.5"
+ 
   
 }
-apply plugin: 'net.linguica.maven-settings'
+
 task sourcesJar(type: Jar, dependsOn: classes) {
     classifier = 'sources'
     from sourceSets.main.allSource
