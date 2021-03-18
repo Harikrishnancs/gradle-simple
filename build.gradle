@@ -4,11 +4,7 @@ apply plugin: 'maven'
 plugins {
     id "net.linguica.maven-settings" version "0.5"
 }
-subprojects {
-    apply plugin: 'net.linguica.maven-settings'
-
-   
-}
+apply plugin: 'net.linguica.maven-settings'
 group = 'com.github.jitpack'
 
 sourceCompatibility = 1.8 // java 8
